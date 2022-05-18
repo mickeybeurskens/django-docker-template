@@ -34,7 +34,7 @@ package manager. It also uses [pre-commit](https://pre-commit.com/)
 to install git-hooks. 
 Pre-commit installs [black](https://github.com/psf/black),
 [flake8](https://flake8.pycqa.org/en/latest/)
-and [isort](https://pycqa.github.io/isort/) to check you code on 
+and [isort](https://pycqa.github.io/isort/) to check your code on 
 every commit and automatically keep it clean. Install and run pre-commit 
 using 
 
