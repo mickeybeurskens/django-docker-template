@@ -1,7 +1,7 @@
 # Django Docker Template 
-A template to quickly start developing with Django and Docker.
+:fire: A template to quickly start developing with Django and Docker :fire:
 
-## Getting Started
+## Getting Started :zap:
 Run the following commands to get started
 ```bash
 # Install the project using poetry
@@ -18,14 +18,14 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Using the Dockerfile requires you to open `Dockerfile` and 
-edit `DJANGO_PROJECT_DIR` to point to your django project. Then
-build and run the Dockerfile
+Use the Dockerfile by running
 
 ```
 docker build -t django-docker .
-docker run -p 8000:8000 --name django django-docker
+docker run -p 8000:8000 --name django-project django-docker
 ```
+
+Then visit your website at `localhost:8000` in your browser. Happy Devving :fireworks:!
 
 ## Setup
 

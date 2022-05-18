@@ -1,7 +1,5 @@
 FROM python:3.8 as python-django
 
-ENV DJANGO_PROJECT_DIR='my_django_project'
-
 # Create non-sudo user
 RUN useradd -ms /bin/bash worker
 ENV PATH="/home/worker/.local/bin:${PATH}"
@@ -17,8 +15,10 @@ RUN poetry config virtualenvs.create false
 WORKDIR /app
 RUN poetry install
 COPY / /app
+
+# Run
+WORKDIR /app
+RUN python manage.py makemigrations
+RUN python manage.py migrate
 EXPOSE 8000
-WORKDIR /app/my_django_project
-CMD python manage.py makemigrations && \
-    python manage.py migrate && \
-    python manage.py runserver
+CMD python manage.py runserver 0.0.0.0:8000
